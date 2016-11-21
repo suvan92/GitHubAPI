@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Repo;
 
 @interface RepoCell : UITableViewCell
+
+- (void)configureCell:(Repo *)repo;
 
 @end

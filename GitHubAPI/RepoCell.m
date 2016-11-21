@@ -7,6 +7,13 @@
 //
 
 #import "RepoCell.h"
+#import "Repo.h"
+
+@interface RepoCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *repoNameLabel;
+
+@end
 
 @implementation RepoCell
 
@@ -19,6 +26,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configureCell:(Repo *)repo {
+    
+    self.repoNameLabel.text = repo.repoName;
 }
 
 @end

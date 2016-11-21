@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RepoCell.h"
 #import "Repo.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -67,7 +68,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell;
+    RepoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell" forIndexPath:indexPath];
+    
+    Repo *currentRepo = self.listOfRepos[indexPath.row];
+    [cell configureCell:currentRepo];
     
     return cell;
 }
