@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSString *repoURL;
 @property (nonatomic, strong) NSNumber *repoID;
 
-- (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSString *)url repoNumber:(NSString *)repoID;
+- (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSString *)url repoNumber:(NSNumber *)repoID;
 
 @end

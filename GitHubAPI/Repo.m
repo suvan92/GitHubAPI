@@ -19,7 +19,7 @@
 //    return repo;
 //}
 
-- (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSString *)url repoNumber:(NSString *)repoID {
+- (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSString *)url repoNumber:(NSNumber *)repoID {
     
     self = [super init];
     if (self) {
@@ -27,15 +27,9 @@
         _repoName = repoName;
         _creationDate = date;
         _repoURL = url;
-        [self setUpRepoNumber:repoID];
+        _repoID = repoID;
     }
     return self;
-}
-
-- (void)setUpRepoNumber:(NSString *)repoID {
-    NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    format.numberStyle = NSNumberFormatterNoStyle;
-    self.repoID = [format numberFromString:repoID];
 }
 
 @end

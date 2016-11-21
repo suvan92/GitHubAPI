@@ -49,18 +49,19 @@
             NSString *repoName = repo[@"name"];
             NSString *dateCreated = repo[@"created_at"];
             NSString *repoUrl = repo[@"html_url"];
-            NSString *repoId = repo[@"id"];
+            NSNumber *repoId = repo[@"id"];
             
             Repo *newRepo = [[Repo alloc] initWithRepoName:repoName dateCreated:dateCreated url:repoUrl repoNumber:repoId];
             [self.listOfRepos addObject:newRepo];
         }
         
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
     }];
     
     [dataTask resume];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self.tableView reloadData];
-    }];
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
