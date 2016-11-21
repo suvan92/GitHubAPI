@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "Repo.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) NSMutableArray *listOfRepos;
 
 @end
 
@@ -16,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.listOfRepos = [NSMutableArray new];
     
     NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/suvan92/repos"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
@@ -38,7 +43,15 @@
             return;
         }
         
-        
+        for (NSDictionary *repo in repos) {
+            NSString *repoName = repo[@"name"];
+            NSString *dateCreated = repo[@"created_at"];
+            NSString *repoUrl = repo[@"html_url"];
+            NSString *repoId = repo[@"id"];
+            
+            Repo *newRepo = [[Repo alloc] initWithRepoName:repoName dateCreated:dateCreated url:repoUrl repoNumber:repoId];
+            [self.listOfRepos addObject:newRepo];
+        }
         
     }];
     
