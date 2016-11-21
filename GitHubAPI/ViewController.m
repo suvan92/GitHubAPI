@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "Repo.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *listOfRepos;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -56,8 +57,19 @@
     }];
     
     [dataTask resume];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+    }];
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.listOfRepos.count;
+}
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell;
+    
+    return cell;
+}
 
 @end

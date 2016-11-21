@@ -14,6 +14,7 @@
 		14F2E0231DE36ED1004ECE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F2E0221DE36ED1004ECE2C /* Assets.xcassets */; };
 		14F2E0261DE36ED1004ECE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F2E0241DE36ED1004ECE2C /* LaunchScreen.storyboard */; };
 		14F2E0321DE39F7B004ECE2C /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F2E0311DE39F7B004ECE2C /* Repo.m */; };
+		14F2E0351DE3AD8B004ECE2C /* RepoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F2E0341DE3AD8B004ECE2C /* RepoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		14F2E0271DE36ED1004ECE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F2E0301DE39F7B004ECE2C /* Repo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
 		14F2E0311DE39F7B004ECE2C /* Repo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repo.m; sourceTree = "<group>"; };
+		14F2E0331DE3AD8B004ECE2C /* RepoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoCell.h; sourceTree = "<group>"; };
+		14F2E0341DE3AD8B004ECE2C /* RepoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				14F2E01A1DE36ED1004ECE2C /* AppDelegate.m */,
 				14F2E0301DE39F7B004ECE2C /* Repo.h */,
 				14F2E0311DE39F7B004ECE2C /* Repo.m */,
+				14F2E0331DE3AD8B004ECE2C /* RepoCell.h */,
+				14F2E0341DE3AD8B004ECE2C /* RepoCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			files = (
 				14F2E01E1DE36ED1004ECE2C /* ViewController.m in Sources */,
 				14F2E01B1DE36ED1004ECE2C /* AppDelegate.m in Sources */,
+				14F2E0351DE3AD8B004ECE2C /* RepoCell.m in Sources */,
 				14F2E0181DE36ED1004ECE2C /* main.m in Sources */,
 				14F2E0321DE39F7B004ECE2C /* Repo.m in Sources */,
 			);
