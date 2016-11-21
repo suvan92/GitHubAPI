@@ -24,6 +24,22 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"error: %@", error.localizedDescription);
+            return;
+        }
+        
+        NSError *jsonError = nil;
+        NSArray *repos = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        
+        if (jsonError) {
+            NSLog(@"jsonError: %@", jsonError.localizedDescription);
+            return;
+        }
+        
+        
+        
     }];
     
     [dataTask resume];

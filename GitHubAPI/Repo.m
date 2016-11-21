@@ -1,0 +1,41 @@
+//
+//  Repo.m
+//  GitHubAPI
+//
+//  Created by Suvan Ramani on 2016-11-21.
+//  Copyright © 2016 suvanr. All rights reserved.
+//
+
+#import "Repo.h"
+
+@implementation Repo
+
+//+ (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSURL *)url repoNumber:(NSNumber *)repoID {
+//    
+//    [super init];
+//    
+//    Repo *repo;
+//    
+//    return repo;
+//}
+
+- (instancetype)initWithRepoName:(NSString *)repoName dateCreated:(NSString *)date url:(NSString *)url repoNumber:(NSString *)repoID {
+    
+    self = [super init];
+    if (self) {
+        
+        _repoName = repoName;
+        _creationDate = date;
+        _repoURL = url;
+        [self setUpRepoNumber:repoID];
+    }
+    return self;
+}
+
+- (void)setUpRepoNumber:(NSString *)repoID {
+    NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    format.numberStyle = NSNumberFormatterNoStyle;
+    self.repoID = [format numberFromString:repoID];
+}
+
+@end
